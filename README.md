@@ -41,6 +41,11 @@ Proyecto testeado -> [https://github.com/AITraining-SofkaProyects-Team2](https:/
 ./gradlew clean test aggregate
 ```
 
+Ejecución de las pruebas con visibilidad en el navegador
+```bash
+.\gradlew.bat clean test aggregate "-Dheadless.mode=false" "-Dwebdriver.driver=chrome"
+```
+
 El reporte Serenity se genera en:
 
 ```
