@@ -18,6 +18,38 @@
 
 ---
 
+## Flujos adicionales
+
+**Cancelar cambio de estado**
+
+| Paso | Acción |
+|------|--------|
+| 1 | El agente navega al Dashboard de gestión de tickets |
+| 2 | Verifica que los tickets están cargados en la tabla |
+| 3 | Selecciona el primer ticket de la lista |
+| 4 | Se visualiza el modal de cambio de estado |
+| 5 | Cancela el cambio de estado |
+| 6 | El modal se cierra sin que el estado haya cambiado |
+
+**Fallo de conexión al actualizar estado**
+
+| Paso | Acción |
+|------|--------|
+| 1 | El agente navega al Dashboard de gestión de tickets |
+| 2 | Verifica que los tickets están cargados en la tabla |
+| 3 | Selecciona el primer ticket de la lista |
+| 4 | Se visualiza el modal de cambio de estado |
+| 5 | Elige el estado deseado y confirma el cambio |
+| 6 | Se muestra un mensaje de error indicando fallo de conexión |
+| 7 | El modal permanece abierto para permitir reintento o cierre manual |
+
+> Nota: los escenarios usan las etiquetas `@cancelar` y `@error`. Para ejecutar sólo un tag:
+
+```bash
+./gradlew clean test aggregate -Dcucumber.filter.tags="@error"
+```
+
+
 ## Requisitos previos
 
 - Java 17+
