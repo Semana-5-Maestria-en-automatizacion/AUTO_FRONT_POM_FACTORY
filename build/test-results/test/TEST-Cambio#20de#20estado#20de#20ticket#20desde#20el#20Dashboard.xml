@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cambio de estado de ticket desde el Dashboard" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-03-10T04:43:44" hostname="G-NOOTBOOK" time="0.747">
+<testsuite name="Cambio de estado de ticket desde el Dashboard" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-03-10T14:37:52" hostname="G-NOOTBOOK" time="0.647">
   <properties/>
-  <testcase name="El agente cambia el estado de un ticket a &quot;En Progreso&quot;" classname="Cambio de estado de ticket desde el Dashboard" time="0.747"/>
+  <testcase name="El agente cambia el estado de un ticket a &quot;En Progreso&quot;" classname="Cambio de estado de ticket desde el Dashboard" time="0.539"/>
+  <testcase name="El agente cancela el cambio de estado" classname="Cambio de estado de ticket desde el Dashboard" time="0.058"/>
+  <testcase name="No se puede actualizar el estado por fallo de conexión" classname="Cambio de estado de ticket desde el Dashboard" time="0.049"/>
   <system-out><![CDATA[
 @cambiar-estado
 Escenario: El agente cambia el estado de un ticket a "En Progreso" ?[90m# src/test/resources/features/cambio_estado.feature:8?[0m
+
+@cambiar-estado @cancelar
+Escenario: El agente cancela el cambio de estado ?[90m# src/test/resources/features/cambio_estado.feature:18?[0m
+
+@cambiar-estado @error
+Escenario: No se puede actualizar el estado por fallo de conexión ?[90m# src/test/resources/features/cambio_estado.feature:27?[0m
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

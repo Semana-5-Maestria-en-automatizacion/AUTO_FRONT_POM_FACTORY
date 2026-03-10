@@ -47,6 +47,34 @@ public class PasosCambioEstado {
         paginaModalCambioEstado.confirmar();
     }
 
+    @When("cancela el cambio de estado")
+    public void cancelaElCambio() {
+        paginaModalCambioEstado.cancelar();
+    }
+
+    @Then("el modal se cierra sin que el estado haya cambiado")
+    public void verificaModalCerradoSinCambio() {
+        Assertions.assertThat(paginaModalCambioEstado.estaOculto())
+                .as("El modal debe cerrarse tras cancelar")
+                .isTrue();
+    }
+
+    @Then("se muestra un mensaje de error indicando fallo de conexión")
+    public void verificaMensajeErrorConexion() {
+        String texto = paginaModalCambioEstado.obtenerMensajeError();
+        Assertions.assertThat(texto)
+                .as("Debe mostrarse mensaje de error por fallo de conexión")
+                .isNotEmpty()
+                .containsIgnoringCase("conex");
+    }
+
+    @And("el modal permanece abierto")
+    public void modalPermaneceAbierto() {
+        Assertions.assertThat(paginaModalCambioEstado.estaVisible())
+                .as("El modal debe permanecer visible tras error")
+                .isTrue();
+    }
+
     @Then("el modal se cierra confirmando que el estado fue actualizado")
     public void verificaCierreDelModal() {
         Assertions.assertThat(paginaModalCambioEstado.estaOculto())

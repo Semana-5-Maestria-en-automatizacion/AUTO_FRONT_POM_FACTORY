@@ -21,6 +21,9 @@ public class PaginaModalCambioEstado extends PageObject {
     @FindBy(xpath = "//*[contains(@class,'bg-green-50') and contains(.,'Estado actualizado exitosamente')]")
     private WebElementFacade mensajeExito;
 
+    @FindBy(xpath = "//*[contains(@class,'bg-red') or contains(@class,'text-red') or contains(.,'No se pudo') or contains(.,'Error')]")
+    private WebElementFacade mensajeError;
+
     public boolean estaVisible() {
         try {
             return tituloModal.waitUntilVisible().isVisible();
@@ -47,6 +50,14 @@ public class PaginaModalCambioEstado extends PageObject {
 
     public String obtenerMensajeExito() {
         return mensajeExito.withTimeoutOf(java.time.Duration.ofSeconds(5)).waitUntilVisible().getText();
+    }
+
+    public String obtenerMensajeError() {
+        try {
+            return mensajeError.withTimeoutOf(java.time.Duration.ofSeconds(5)).waitUntilVisible().getText();
+        } catch (Exception e) {
+            return "";
+        }
     }
 
     public boolean estaOculto() {

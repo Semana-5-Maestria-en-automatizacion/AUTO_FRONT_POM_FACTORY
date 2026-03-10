@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8"/>
-    <title>El agente cambia el estado de un ticket a "En Progreso"</title>
+    <title>No se puede actualizar el estado por fallo de conexión</title>
 <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 <link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
@@ -123,7 +123,7 @@
 
  <!-- inflection.of(breadcrumb.displayName).asATitle()-->
             > <a href="#">Cambio de estado de ticket desde el Dashboard</a>
-        > El agente cambia el estado de un ticket a &quot;en progreso&quot;
+        > No se puede actualizar el estado por fallo de conexi&oacute;n
         </span>
         </div>
         <div class="rightbg"></div>
@@ -170,6 +170,12 @@
                                     <span class="badge example-tag tag-badge" style="background:default;">
                                     <i class="bi bi-tag-fill"></i>&nbsp;
                                         <a class="tagLink" style="background:default;"
+                                           href="b2fa980041cd67bcc6ae2d82d29ab770f5e1a2121aa3bef98a5f6920fa2f4d5c.html">Error
+                                        </a>
+                                </span>
+                                    <span class="badge example-tag tag-badge" style="background:default;">
+                                    <i class="bi bi-tag-fill"></i>&nbsp;
+                                        <a class="tagLink" style="background:default;"
                                            href="2a5b6a7be0f08df02d8ab0b4d4c68648c2695c6c7ef0658c71de4d42b1415b18.html">Under 1 Second
                                               (Duration)
                                         </a>
@@ -193,7 +199,7 @@
                             <span class="outcome-icon"><a href='##beforetable'><i class='bi bi-hourglass-top pending-icon fa-2x' title='PENDING'></i></a></span>
                             <span class="test-case-title">
                                 <span class="pending-color">
-                                    El agente cambia el estado de un ticket a &quot;En Progreso&quot;
+                                    No se puede actualizar el estado por fallo de conexi&oacute;n
                                         <span class="related-issue-title"></span>
                                 </span>
                             </span>
@@ -207,7 +213,8 @@ When selecciona el primer ticket de la lista<br />
 Then se visualiza el modal de cambio de estado<br />
 When elige el estado &quot;En Progreso&quot; en el modal<br />
 And confirma el cambio de estado<br />
-Then el modal se cierra confirmando que el estado fue actualizado
+Then se muestra un mensaje de error indicando fallo de conexión<br />
+And el modal permanece abierto
                                 </div>
                         </td>
                     </tr>
@@ -245,7 +252,7 @@ Then el modal se cierra confirmando que el estado fue actualizado
             <tr class="test-PENDING">
                     <td colspan="2"></td>
                 <td width="130"><span class="top-level-step"><em>PENDING</em></span></td>
-                <td width="100"><span class="top-level-step"><em>0.04s</em></span></td>
+                <td width="100"><span class="top-level-step"><em>0.01s</em></span></td>
             </tr>
 
         </table>
