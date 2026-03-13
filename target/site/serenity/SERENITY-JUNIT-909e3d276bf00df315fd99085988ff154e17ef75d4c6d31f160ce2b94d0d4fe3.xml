@@ -1,6 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="1" name="Cambio de estado de ticket desde el Dashboard" skipped="0" tests="3" time="67.91" timestamp="2026-03-10 12:34:21"><testcase name="El agente cambia el estado de un ticket a &quot;En Progreso&quot;"/><testcase name="El agente cancela el cambio de estado"/><testcase name="No se puede actualizar el estado por fallo de conexión"><failure message="[Debe mostrarse mensaje de error por fallo de conexión] &#13;&#10;Expecting actual not to be empty" type="java.lang.AssertionError">[Debe mostrarse mensaje de error por fallo de conexión] &#13;
-Expecting actual not to be empty</failure><system-err>[Debe mostrarse mensaje de error por fallo de conexión] &#13;
-Expecting actual not to be empty&#13;
-co.sofka.automation.steps.PasosCambioEstado.verificaMensajeErrorConexion(PasosCambioEstado.java:68)&#13;
-✽.se muestra un mensaje de error indicando fallo de conexión(file:///C:/Trabajo/Sofka/Semana%205/AUTO_FRONT_POM_FACTORY/src/test/resources/features/cambio_estado.feature:34)&#13;
-</system-err></testcase></testsuite>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="0" name="Cambio de estado de ticket desde el Dashboard" skipped="0" tests="1" time="9.23" timestamp="2026-03-13 04:31:46"><testcase name="El agente cambia el estado de un ticket a &quot;En Progreso&quot;"/></testsuite>
