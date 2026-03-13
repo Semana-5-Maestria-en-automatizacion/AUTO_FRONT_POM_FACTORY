@@ -1,0 +1,20 @@
+flowchart LR
+  Feature["Feature: cambio_estado.feature"]
+  Runner["CucumberRunner<br>(JUnit + Serenity)"]
+  Steps["Step Definitions<br>PasosCambioEstado"]
+  Dashboard["PaginaDashboard"]
+  Modal["PaginaModalCambioEstado"]
+  Serenity["Serenity / WebDriver<br>(serenity.conf)"]
+  Browser["Browser / DOM"]
+  Assertions["AssertJ (validations)"]
+  Reports["Serenity Reports"]
+
+  Feature --> Runner
+  Runner --> Steps
+  Steps --> Dashboard
+  Steps --> Modal
+  Dashboard --> Serenity
+  Modal --> Serenity
+  Serenity --> Browser
+  Steps --> Assertions
+  Serenity --> Reports

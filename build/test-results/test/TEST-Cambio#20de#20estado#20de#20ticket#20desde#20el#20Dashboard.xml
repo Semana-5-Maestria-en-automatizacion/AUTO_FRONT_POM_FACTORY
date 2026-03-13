@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cambio de estado de ticket desde el Dashboard" tests="3" skipped="0" failures="1" errors="0" timestamp="2026-03-10T15:34:20" hostname="G-NOOTBOOK" time="70.989">
+<testsuite name="Cambio de estado de ticket desde el Dashboard" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-03-13T19:31:46" hostname="G-NOOTBOOK" time="10.003">
   <properties/>
-  <testcase name="El agente cambia el estado de un ticket a &quot;En Progreso&quot;" classname="Cambio de estado de ticket desde el Dashboard" time="44.83"/>
-  <testcase name="El agente cancela el cambio de estado" classname="Cambio de estado de ticket desde el Dashboard" time="8.357"/>
-  <testcase name="No se puede actualizar el estado por fallo de conexión" classname="Cambio de estado de ticket desde el Dashboard" time="17.802">
-    <failure message="java.lang.AssertionError: [Debe mostrarse mensaje de error por fallo de conexión] &#13;&#10;Expecting actual not to be empty" type="java.lang.AssertionError">java.lang.AssertionError: [Debe mostrarse mensaje de error por fallo de conexión] 
-Expecting actual not to be empty
-	at co.sofka.automation.steps.PasosCambioEstado.verificaMensajeErrorConexion(PasosCambioEstado.java:68)
-	at ✽.se muestra un mensaje de error indicando fallo de conexión(file:///C:/Trabajo/Sofka/Semana%205/AUTO_FRONT_POM_FACTORY/src/test/resources/features/cambio_estado.feature:34)
-</failure>
-  </testcase>
+  <testcase name="El agente cambia el estado de un ticket a &quot;En Progreso&quot;" classname="Cambio de estado de ticket desde el Dashboard" time="10.003"/>
   <system-out><![CDATA[
 @cambiar-estado
 Scenario: El agente cambia el estado de un ticket a "En Progreso"   ?[90m# src/test/resources/features/cambio_estado.feature:8?[0m
@@ -20,44 +12,10 @@ Scenario: El agente cambia el estado de un ticket a "En Progreso"   ?[90m# src/t
   ?[32mWhen ?[0m?[32melige el estado ?[0m?[32m?[1m"En Progreso"?[0m?[32m en el modal?[0m                    ?[90m# co.sofka.automation.steps.PasosCambioEstado.eligeEstadoEnModal(java.lang.String)?[0m
   ?[32mAnd ?[0m?[32mconfirma el cambio de estado?[0m                                  ?[90m# co.sofka.automation.steps.PasosCambioEstado.confirmaElCambio()?[0m
   ?[32mThen ?[0m?[32mel modal se cierra confirmando que el estado fue actualizado?[0m ?[90m# co.sofka.automation.steps.PasosCambioEstado.verificaCierreDelModal()?[0m
-
-@cambiar-estado @cancelar
-Scenario: El agente cancela el cambio de estado                   ?[90m# src/test/resources/features/cambio_estado.feature:18?[0m
-  ?[32mGiven ?[0m?[32mque el usuario está en el Dashboard de gestión de tickets?[0m ?[90m# co.sofka.automation.steps.PasosCambioEstado.usuarioEnDashboard()?[0m
-  ?[32mAnd ?[0m?[32mlos tickets están cargados en la tabla?[0m                      ?[90m# co.sofka.automation.steps.PasosCambioEstado.ticketsCargadosEnTabla()?[0m
-  ?[32mWhen ?[0m?[32mselecciona el primer ticket de la lista?[0m                    ?[90m# co.sofka.automation.steps.PasosCambioEstado.seleccionaPrimerTicket()?[0m
-  ?[32mThen ?[0m?[32mse visualiza el modal de cambio de estado?[0m                  ?[90m# co.sofka.automation.steps.PasosCambioEstado.verificaModalVisible()?[0m
-  ?[32mWhen ?[0m?[32mcancela el cambio de estado?[0m                                ?[90m# co.sofka.automation.steps.PasosCambioEstado.cancelaElCambio()?[0m
-  ?[32mThen ?[0m?[32mel modal se cierra sin que el estado haya cambiado?[0m         ?[90m# co.sofka.automation.steps.PasosCambioEstado.verificaModalCerradoSinCambio()?[0m
-
-@cambiar-estado @error
-Scenario: No se puede actualizar el estado por fallo de conexión  ?[90m# src/test/resources/features/cambio_estado.feature:27?[0m
-  ?[32mGiven ?[0m?[32mque el usuario está en el Dashboard de gestión de tickets?[0m ?[90m# co.sofka.automation.steps.PasosCambioEstado.usuarioEnDashboard()?[0m
-  ?[32mAnd ?[0m?[32mlos tickets están cargados en la tabla?[0m                      ?[90m# co.sofka.automation.steps.PasosCambioEstado.ticketsCargadosEnTabla()?[0m
-  ?[32mWhen ?[0m?[32mselecciona el primer ticket de la lista?[0m                    ?[90m# co.sofka.automation.steps.PasosCambioEstado.seleccionaPrimerTicket()?[0m
-  ?[32mThen ?[0m?[32mse visualiza el modal de cambio de estado?[0m                  ?[90m# co.sofka.automation.steps.PasosCambioEstado.verificaModalVisible()?[0m
-  ?[32mWhen ?[0m?[32melige el estado ?[0m?[32m?[1m"En Progreso"?[0m?[32m en el modal?[0m                  ?[90m# co.sofka.automation.steps.PasosCambioEstado.eligeEstadoEnModal(java.lang.String)?[0m
-  ?[32mAnd ?[0m?[32mconfirma el cambio de estado?[0m                                ?[90m# co.sofka.automation.steps.PasosCambioEstado.confirmaElCambio()?[0m
-DEBUG obtenerMensajeError: ''
-  ?[31mThen ?[0m?[31mse muestra un mensaje de error indicando fallo de conexión?[0m ?[90m# co.sofka.automation.steps.PasosCambioEstado.verificaMensajeErrorConexion()?[0m
-      ?[31mjava.lang.AssertionError: [Debe mostrarse mensaje de error por fallo de conexión] 
-Expecting actual not to be empty
-	at co.sofka.automation.steps.PasosCambioEstado.verificaMensajeErrorConexion(PasosCambioEstado.java:68)
-	at ✽.se muestra un mensaje de error indicando fallo de conexión(file:///C:/Trabajo/Sofka/Semana%205/AUTO_FRONT_POM_FACTORY/src/test/resources/features/cambio_estado.feature:34)
-?[0m
-  ?[36mAnd ?[0m?[36mel modal permanece abierto?[0m                                  ?[90m# co.sofka.automation.steps.PasosCambioEstado.modalPermaneceAbierto()?[0m
 ]]></system-out>
-  <system-err><![CDATA[mar. 10, 2026 12:34:28 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+  <system-err><![CDATA[mar. 13, 2026 4:31:50 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 ADVERTENCIA: Unable to find CDP implementation matching 145
-mar. 10, 2026 12:34:28 P. M. org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
-ADVERTENCIA: Unable to find version of CDP to use for 145.0.7632.160. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
-mar. 10, 2026 12:35:08 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
-ADVERTENCIA: Unable to find CDP implementation matching 145
-mar. 10, 2026 12:35:08 P. M. org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
-ADVERTENCIA: Unable to find version of CDP to use for 145.0.7632.160. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
-mar. 10, 2026 12:35:15 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
-ADVERTENCIA: Unable to find CDP implementation matching 145
-mar. 10, 2026 12:35:15 P. M. org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+mar. 13, 2026 4:31:50 P. M. org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
 ADVERTENCIA: Unable to find version of CDP to use for 145.0.7632.160. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
 ]]></system-err>
 </testsuite>
